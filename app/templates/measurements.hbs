@@ -1,0 +1,9 @@
+<ul>
+{{#each controller}}
+  <li>{{timestamp}} | {{wtemp}} | {{leitf}} | {{pegel}}</li>
+{{else}}
+  Sorry, no measurements loaded.
+{{/each}}
+</ul>
+{{log controller.tmp}}
+{{bar-chart data=controller.data isLoaded=controller.model.content.isLoaded}}

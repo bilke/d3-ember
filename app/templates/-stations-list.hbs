@@ -1,0 +1,7 @@
+<ul>
+{{#each controller}}
+  <li>{{#link-to 'station' this}}{{name}}{{/link-to}}</a></li>
+{{else}}
+  Sorry, no stations loaded.
+{{/each}}
+</ul>
