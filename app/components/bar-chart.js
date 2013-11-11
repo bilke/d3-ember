@@ -11,7 +11,6 @@ var BarChartComponent = Ember.Component.extend({
     // .noTicks(true)
     // .staticDataLabels(true)
 
-
   didInsertElement: function() {
     Ember.run.once(this, 'update');
   },
