@@ -7,6 +7,8 @@
     "Ember",
     "Em",
     "DS",
+    "d3",
+    "moment",
     "$"
   ],
   "node" : false,
