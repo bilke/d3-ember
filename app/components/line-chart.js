@@ -33,6 +33,29 @@ function myData() {
   ];
 }
 
+function sinAndCos() {
+  var sin = [],
+      cos = [];
+
+  for (var i = 0; i < 100; i++) {
+    sin.push({x: i, y: Math.sin(i/10)});
+    cos.push({x: i, y: .5 * Math.cos(i/10)});
+  }
+
+  return [
+    {
+      values: sin,
+      key: 'Sine Wave',
+      color: '#ff7f0e'
+    },
+    {
+      values: cos,
+      key: 'Cosine Wave',
+      color: '#2ca02c'
+    }
+  ];
+}
+
 function LineChart() {
   nv.addGraph(function() {
   var chart = nv.models.lineChart();
@@ -42,11 +65,11 @@ function LineChart() {
 
   chart.yAxis
     .axisLabel("Y-axis Label")
-    .tickFormat(d3.format("d"))
+    .tickFormat(d3.format("0.02f"))
     ;
 
   d3.select("svg")
-    .datum(myData())
+    .datum(sinAndCos())
     .transition().duration(500).call(chart);
 
   nv.utils.windowResize(
