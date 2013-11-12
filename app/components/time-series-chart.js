@@ -25,6 +25,7 @@ function TimeSeriesChart() {
   var margin = {top: 20, right: 20, bottom: 20, left: 20},
       width = 760,
       height = 120,
+      duration = 500,
       xValue = function(d) { return d[0]; },
       yValue = function(d) { return d[1]; },
       xScale = d3.time.scale(),
@@ -50,6 +51,7 @@ function TimeSeriesChart() {
 
       // Update the y-scale.
       yScale
+          //.domain([0, d3.max(data, function(d) { return d[1]; })]) // zero based
           .domain(d3.extent(data, function(d) { return d[1]; }))
           .range([height, 0]);
 
@@ -73,22 +75,30 @@ function TimeSeriesChart() {
 
       // Update the area path.
       g.select(".area")
+          .transition()
+          .duration(duration)
           .attr("d", area.y0(yScale.range()[0]));
 
       // Update the line path.
       g.select(".line")
+          .transition()
+          .duration(duration)
           .attr("d", line);
 
       // Update the x-axis.
       g.select(".x.axis")
           .attr("transform", "translate(0," + yScale.range()[0] + ")")
+          .transition()
+          .duration(duration)
           .call(xAxis);
 
-       // Update the y-axis.
+      // Update the y-axis.
       g.select(".y.axis")
-          .attr("transform", "translate(0," + xScale.range()[0] + ")")
+          .transition()
+          .duration(duration)
           .call(yAxis);
     });
+
   }
 
   // The x-accessor for the path generator; xScale at xValue.
