@@ -13,7 +13,7 @@ Station.FIXTURES = [
     x: 641983.290,
     y: 5724785.740,
     h: 446.473,
-    measurements: [1, 2]
+    measurements: [1, 2, 3]
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ Station.FIXTURES = [
     x: 641979.110,
     y: 5724788.790,
     h: 444.413,
-    measurements: [2, 1]
+    measurements: [3, 2, 1]
   }
 ];
 

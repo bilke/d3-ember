@@ -7,31 +7,15 @@ var LineChart = Ember.Component.extend({
     Ember.run.once(this, 'update');
   },
 
-  //update: function() {
-  //  if (this.get('isLoaded')) {
-  //    d3.select(this.$()[0])
-  //      .data([ this.get('data') ])
-  //      .call(this.get('chart'));
-  //  }
-  //}.observes('data')
+  update: function() {
+    if (this.get('isLoaded')) {
+      d3.select(this.$()[0])
+        .data([ this.get('data') ])
+        .call(this.get('chart.update'));
+    }
+  }.observes('data')
 });
 
-function myData() {
-  var series1 = [];
-  for(var i =1; i < 100; i ++) {
-    series1.push({
-      x: i, y: 100 / i
-    });
-  }
-
-  return [
-    {
-      key: "Series #1",
-      values: series1,
-      color: "#0000ff"
-    }
-  ];
-}
 
 function sinAndCos() {
   var sin = [],
@@ -39,7 +23,7 @@ function sinAndCos() {
 
   for (var i = 0; i < 100; i++) {
     sin.push({x: i, y: Math.sin(i/10)});
-    cos.push({x: i, y: .5 * Math.cos(i/10)});
+    cos.push({x: i, y: 0.5 * Math.cos(i/10)});
   }
 
   return [
@@ -69,7 +53,7 @@ function LineChart() {
     ;
 
   d3.select("svg")
-    .datum(sinAndCos())
+    //.datum(sinAndCos())
     .transition().duration(500).call(chart);
 
   nv.utils.windowResize(

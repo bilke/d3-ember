@@ -10,7 +10,7 @@ Measurement.FIXTURES = [
   {
     id: 1,
     timestamp: moment( '25.07.12 23:55:00', 'DD.MM.YY HH:mm:ss' ).toDate(),
-    wtemp: 27.07,
+    wtemp: 5.07,
     leitf: 146,
     pegel: 17.6925,
     station: 1
@@ -19,6 +19,14 @@ Measurement.FIXTURES = [
     id: 2,
     timestamp: moment( '25.07.12 23:45:00', 'DD.MM.YY HH:mm:ss' ).toDate(),
     wtemp: 17.11,
+    leitf: 146,
+    pegel: 17.6575,
+    station: 2
+  },
+  {
+    id: 3,
+    timestamp: moment( '25.07.12 23:35:00', 'DD.MM.YY HH:mm:ss' ).toDate(),
+    wtemp: 7.11,
     leitf: 146,
     pegel: 17.6575,
     station: 2

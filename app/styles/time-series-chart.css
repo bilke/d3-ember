@@ -1,0 +1,9 @@
+path.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+path.area {
+  fill: #969696;
+}

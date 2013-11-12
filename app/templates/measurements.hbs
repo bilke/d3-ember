@@ -5,6 +5,5 @@
   Sorry, no measurements loaded.
 {{/each}}
 </ul>
-{{log controller.tmp}}
+{{time-series-chart data=controller.data2 isLoaded=controller.model.content.isLoaded}}
 {{bar-chart data=controller.data isLoaded=controller.model.content.isLoaded}}
-{{line-chart}}
