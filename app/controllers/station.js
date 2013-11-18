@@ -1,4 +1,11 @@
 var StationController = Ember.ObjectController.extend({
+  data: function() {
+    if (!this.get('content.isLoaded'))
+      {return;}
+    var data = [ {lon: this.get('lon'), lat: this.get('lat')} ];
+    return data;
+  }.property('model'),
+
   lonlat: function() {
     var utm   = "+proj=utm +zone=32",
         wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",

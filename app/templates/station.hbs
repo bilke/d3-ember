@@ -1,4 +1,5 @@
 <p>{{name}} ({{lon}}, {{lat}}, {{h}})</p>
+{{geo-points-chart data=data isLoaded=content.isLoaded}}
 {{#if measurements}}
 {{render 'measurements' measurements}}
 {{else}}
